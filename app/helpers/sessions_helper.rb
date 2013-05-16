@@ -3,4 +3,8 @@ module SessionsHelper
 		session[:remember_token] = user.id
 		@current_user = User.find(session[:remember_token])
 	end
+
+	def sign_out
+		
+	end
 end
