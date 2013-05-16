@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by_email(params[:session][:email].downcase)
 	  if user && user.authenticate(params[:session][:password])
-	    # They are who they say they are
+	    session[:remember_token] = user.id
 	  else
 	    # They got something wrong
 	  end
