@@ -1,9 +1,7 @@
 Session4::Application.routes.draw do
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  resources :sessions, only: [:new, :create, :destroy]
 
   root :to => "pages#home"
 
