@@ -5,7 +5,8 @@ module SessionsHelper
 	end
 
 	def sign_out
-		
+		@current_user = nil
+		reset_session
 	end
 
 	def current_user=(user)
