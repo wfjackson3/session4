@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :logged_in_user, only: [:new, :create]
+  before_filter :logged_in_user, only: [:new, :create, :index]
 
   # GET /events
   # GET /events.json
