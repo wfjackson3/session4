@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :logged_in_user, only: [:new, :create]
+
   # GET /events
   # GET /events.json
   def index
@@ -80,4 +82,10 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def logged_in_user
+    redirect_to signin_path unless signed_in?
+  end
+
+
 end
