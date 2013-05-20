@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
 	  if user && user.authenticate(params[:session][:password])
 	    sign_in user
 	  else
-	    # They got something wrong
+      flash[:error] = "Something went wrong. Please try again."
+	    redirect_to signin_path
 	  end
   end
 
