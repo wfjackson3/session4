@@ -16,6 +16,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :city, :ends_at, :starts_at, :state, :street_address, :user_id
   
+  belongs_to :user
+
   validates :user_id, :presence => true
   validates :street_address, :presence => true, :length => { :maximum => 100 }
   validates :city, :presence => true, :length => { :maximum => 25 }
