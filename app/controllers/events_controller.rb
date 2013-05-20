@@ -26,8 +26,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
-    @event.user = current_user
+    @event = current_user.events.new
 
     respond_to do |format|
       format.html # new.html.erb
