@@ -13,12 +13,12 @@
     <% end %>
 
       <%= f.label :starts_at %>
-      <%= f.datetime_select :starts_at, :default => {:hour => 10, :minute => 30}, :ampm => true, :minute_step => 15 %>
-
+      <%= f.date_select :starts_at, {}, {:class => 'input-small'} %>
+      <%= f.time_select :starts_at, {:default => {:hour => 9, :minute => 00}, :ampm => true, :minute_step => 15}, {:class => "input-small"} %>
 
       <%= f.label :ends_at %>
-      <%= f.date_select :ends_at, {},{:class => 'input-small'} %>
-      <%= f.time_select :ends_at, :ignore_date => true %>
+      <%= f.date_select :ends_at, {}, {:class => 'input-small'} %>
+      <%= f.time_select :ends_at, {:default => {:hour => 10, :minute => 00}, :ignore_date => true, :ampm => true, :minute_step => 15}, {:class => "input-small"} %>
 
       <%= f.label :street_address %>
       <%= f.text_field :street_address %>
