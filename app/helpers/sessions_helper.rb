@@ -16,4 +16,8 @@ module SessionsHelper
   def current_user
   	@current_user ||= User.find(session[:remember_token]) unless session[:remember_token].nil?
 	end
+
+	def signed_in?
+		!current_user.nil?
+	end
 end
