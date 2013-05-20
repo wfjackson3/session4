@@ -15,8 +15,10 @@
       <%= f.label :starts_at %>
       <%= f.datetime_select :starts_at, :default => {:hour => 10, :minute => 30}, :ampm => true, :minute_step => 15 %>
 
+
       <%= f.label :ends_at %>
-      <%= f.datetime_select :ends_at %>
+      <%= f.date_select :ends_at, {},{:class => 'input-small'} %>
+      <%= f.time_select :ends_at, :ignore_date => true %>
 
       <%= f.label :street_address %>
       <%= f.text_field :street_address %>
