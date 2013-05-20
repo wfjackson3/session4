@@ -20,4 +20,12 @@ module SessionsHelper
 	def signed_in?
 		!current_user.nil?
 	end
+
+	def same_user?(user)
+		redirect_to(root_path) unless current_user?(user)
+	end
+
+	def current_user?
+		user == current_user
+	end
 end
