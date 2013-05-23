@@ -42,7 +42,7 @@ class InvitesController < ApplicationController
   # POST /invites
   # POST /invites.json
   def create
-    @invite = Invite.new(params[:invite])
+    @invite = current_user.invites.new(params[:invite])
 
     respond_to do |format|
       if @invite.save
