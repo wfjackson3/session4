@@ -2,3 +2,11 @@
 <h2>
 	Welcome back, <%= current_user.name %>
 </h2>
+<h3>Your open invitations</h3>
+<% current_user.invites.each do |invite| %>
+	<div class="row">
+		<div class="span2 well">
+			<%= invite.invitee_name %>
+		</div>
+	</div>
+<% end %>
