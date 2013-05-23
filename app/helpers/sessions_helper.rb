@@ -25,7 +25,7 @@ module SessionsHelper
 		redirect_to(root_path) unless current_user?(user)
 	end
 
-	def current_user?
+	def current_user?(user)
 		user == current_user
 	end
 
