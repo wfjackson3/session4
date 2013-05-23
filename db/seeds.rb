@@ -64,3 +64,53 @@ Event.create(
 	city: "Shawnee",
 	state: "KS"
 )
+
+Invite.create(
+	user_id: 1,
+	invitee_name: "First woman",
+	suggested_start: DateTime.now.utc + 1.week,
+	suggested_end: DateTime.now.utc + 1.week + 1.hour,
+	street_address: "10703 Shawnee Mission Parkway",
+	city: "Shawnee",
+	state: "KS"
+)
+
+Invite.create(
+	user_id: 1,
+	invitee_name: "Second man",
+	suggested_start: DateTime.now.utc + 1.week + 1.hour,
+	suggested_end: DateTime.now.utc + 1.week + 2.hours,
+	street_address: "10703 Shawnee Mission Parkway",
+	city: "Shawnee",
+	state: "KS"
+)
+
+Invite.create(
+	user_id: 1,
+	invitee_name: "Third person",
+	suggested_start: DateTime.now.utc + 1.week + 2.hours,
+	suggested_end: DateTime.now.utc + 1.week + 3.hours,
+	street_address: "10703 Shawnee Mission Parkway",
+	city: "Shawnee",
+	state: "KS" 
+)
+
+Invite.create(
+	user_id: 2,
+	invitee_name: "Fourth lady",
+	suggested_start: DateTime.now.utc + 1.week + 3.hours,
+	suggested_end: DateTime.now.utc + 1.week + 4.hours,
+	street_address: "10703 Shawnee Mission Parkway",
+	city: "Shawnee",
+	state: "KS"
+)
+
+Invite.create(
+	user_id: 2,
+	invitee_name: "Fifth guy",
+	suggested_start: DateTime.now.utc + 1.week + 4.hours,
+	suggested_end: DateTime.now.utc + 1.week + 5.hours,
+	street_address: "10703 Shawnee Mission Parkway",
+	city: "Shawnee",
+	state: "KS"
+)
