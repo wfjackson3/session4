@@ -28,4 +28,8 @@ module SessionsHelper
 	def current_user?
 		user == current_user
 	end
+
+  def logged_in_user
+  	redirect_to signin_path unless signed_in?
+  end
 end
