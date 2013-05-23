@@ -16,5 +16,13 @@
 
 class Invite < ActiveRecord::Base
   attr_accessible :city, :invitee_name, :state, :street_address, :suggested_end, :suggested_start, :user_id
+
   belongs_to :user
+
+  validates :user_id, :presence => true
+  validates :street_address, :presence => true, :length => { :maximum => 100 }
+  validates :city, :presence => true, :length => { :maximum => 25 }
+  validates :state, :presence => true, :length => { :maximum => 2 }
+  validates :suggested_start, :presence => true
+  validates :suggested_end, :presence => true
 end
