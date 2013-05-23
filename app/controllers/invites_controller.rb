@@ -26,7 +26,7 @@ class InvitesController < ApplicationController
   # GET /invites/new
   # GET /invites/new.json
   def new
-    @invite = Invite.new
+    @invite = current_user.invites.new
 
     respond_to do |format|
       format.html # new.html.erb
