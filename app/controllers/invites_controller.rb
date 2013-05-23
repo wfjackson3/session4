@@ -1,8 +1,10 @@
 class InvitesController < ApplicationController
+  before_filter :logged_in_user, only: [:new, :create, :index]
+
   # GET /invites
   # GET /invites.json
   def index
-    @invites = Invite.all
+    @invites = current_user.invites
 
     respond_to do |format|
       format.html # index.html.erb
