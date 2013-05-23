@@ -1,4 +1,7 @@
 Session4::Application.routes.draw do
+  resources :invites
+
+
   resources :events
 
 

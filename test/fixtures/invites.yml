@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  invitee_name: MyString
+  suggested_start: 2013-05-23 13:11:36
+  suggested_end: 2013-05-23 13:11:36
+  street_address: MyString
+  city: MyString
+  state: MyString
+
+two:
+  user_id: 1
+  invitee_name: MyString
+  suggested_start: 2013-05-23 13:11:36
+  suggested_end: 2013-05-23 13:11:36
+  street_address: MyString
+  city: MyString
+  state: MyString
