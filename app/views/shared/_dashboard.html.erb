@@ -6,7 +6,7 @@
 <% current_user.invites.each do |invite| %>
 	<div class="row">
 		<div class="span2 well">
-			<%= invite.invitee_name %>
+			<%= link_to invite.invitee_name, invite %>
 		</div>
 	</div>
 <% end %>
