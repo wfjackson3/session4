@@ -35,6 +35,7 @@
   <%= @invite.state %>
 </p>
 
+<%= render 'email_text' if current_user?(@invite.user) %>
 
 <%= link_to 'Edit', edit_invite_path(@invite) %> |
 <%= link_to 'Back', invites_path %>
