@@ -24,4 +24,11 @@ class Event < ActiveRecord::Base
   validates :state, :presence => true, :length => { :maximum => 2 }
   validates :starts_at, :presence => true
   validates :ends_at, :presence => true
+
+  def self.for_day_and_time_offsets_from(beginning, day, time)
+  	where(['starts_at > ? and starts_at < ?', 
+  		beginning + day.days + time.hours,
+  		beginning + day.days + time.hours + 1.hour])
+  	
+  end
 end

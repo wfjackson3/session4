@@ -1,3 +1,28 @@
+<table class="table table-bordered">
+  <tr>
+    <th class="span1"></th>
+      <%- @day_offsets.each do |day_offset| %>
+      <th class="span1"><%= (@beginning_of_week + day_offset.days).strftime('%a %m/%e') %></th>
+      <% end %>  
+  </tr>
+<%- @time_offsets.each do |time_offset| -%>
+  <tbody>
+    <tr>
+      <td class="span1"><%= (@beginning_of_week + time_offset.hours).strftime('%l:%M %p') %></td>
+      <%- @day_offsets.each do |day_offset| %>
+      <td class="span1">
+        <%- Event.for_day_and_time_offsets_from(@beginning_of_week, day_offset, time_offset).each do |event| %>
+          <%= event.street_address %><br>
+        <%- end -%>
+     </td>
+  <%- end -%>
+  </tr>
+  </tbody>
+<%- end -%>
+</table>
+
+
+
 <h1>Listing events</h1>
 
 <table>

@@ -5,6 +5,9 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = current_user.events
+    @day_offsets = 0..6
+    @time_offsets = 8..22
+    @beginning_of_week = Time.now.utc.beginning_of_week
 
     respond_to do |format|
       format.html # index.html.erb
