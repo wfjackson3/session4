@@ -25,6 +25,11 @@ class Event < ActiveRecord::Base
   validates :starts_at, :presence => true
   validates :ends_at, :presence => true
 
+  def self.for_day_and_time_offsets_from_alt(beginning, day, time)
+    date_field = arel_table[:starts_at]
+    where(date_field.gt(beginning + day.days + time.hours)).where(date_field.lt(beginning + day.days + time.hours + 1.hour))
+  end
+
   def self.for_day_and_time_offsets_from(beginning, day, time)
   	where(['starts_at > ? and starts_at < ?', 
   		beginning + day.days + time.hours,
